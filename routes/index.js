@@ -4,12 +4,12 @@ import auth from '../lib/auth.js';
 
 const router = express.Router();
 
-app.get("/", auth, indexController.startView);
-app.get("/login", indexController.loginView);
-app.get("/signup", indexController.signupView);
+router.get("/", auth, indexController.startView);
+router.get("/login", indexController.loginView);
+router.get("/signup", indexController.signupView);
 
-app.post("/login", indexController.login);
-app.post("/signup", indexController.signup);
-app.post("/logout", auth, indexController.logout);
+router.post("/login", indexController.login);
+router.post("/signup", indexController.signup);
+router.get("/logout", auth, indexController.logout);
 
 export default router;
